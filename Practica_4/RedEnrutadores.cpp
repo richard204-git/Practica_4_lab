@@ -44,7 +44,7 @@ void RedEnrutadores::cargarDesdeCSV(const string& archivo) {
 
     file.close();
     cout << "Red cargada desde el archivo: " << archivo << endl;
-    calcularTodasLasRutas();
+
 }
 
 void RedEnrutadores::agregarRouter(const string& nombre) {
@@ -54,7 +54,8 @@ void RedEnrutadores::agregarRouter(const string& nombre) {
     }
     routers[nombre] = new Enrutador(nombre);
     cout << "Router " << nombre << " agregado temporalmente (no se guarda en archivo)." << endl;
-    calcularTodasLasRutas();
+
+
 }
 
 void RedEnrutadores::eliminarRouter(const string& nombre) {
@@ -70,7 +71,6 @@ void RedEnrutadores::eliminarRouter(const string& nombre) {
         router->eliminarVecino(nombre);
 
     cout << "Router " << nombre << " eliminado (solo en ejecución)." << endl;
-    calcularTodasLasRutas();
 }
 
 void RedEnrutadores::agregarEnlace(const string& origen, const string& destino, int costo) {
@@ -80,8 +80,9 @@ void RedEnrutadores::agregarEnlace(const string& origen, const string& destino, 
     }
     routers[origen]->agregarVecino(destino, costo);
     routers[destino]->agregarVecino(origen, costo);
-    calcularTodasLasRutas();
+
 }
+
 
 void RedEnrutadores::dijkstra(const string& origen, map<string, int>& distancias, map<string, string>& predecesores) {
     const int INF = numeric_limits<int>::max();
@@ -270,7 +271,7 @@ void RedEnrutadores::generarRedAleatoria() {
     }
 
     cout << "\nRed aleatoria generada exitosamente.\n";
-    calcularTodasLasRutas();
+
 }
 
 void RedEnrutadores::mostrarTablaCompletaAleatoria()  {

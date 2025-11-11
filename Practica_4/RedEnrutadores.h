@@ -9,9 +9,7 @@ using namespace std;
 class RedEnrutadores {
 private:
     map<string, Enrutador*> routers;
-    void dijkstra(const string& origen,
-                  map<string, int>& distancias,
-                  map<string, string>& predecesores);
+    void dijkstra(const string& origen, map<string, int>& distancias,  map<string, string>& predecesores);
 
 public:
     ~RedEnrutadores();
@@ -20,7 +18,6 @@ public:
     void agregarRouter(const string& nombre);
     void eliminarRouter(const string& nombre);
     void agregarEnlace(const string& origen, const string& destino, int costo);
-    void calcularTodasLasRutas();
 
     void mostrarCaminoMasCorto(const string& origen, const string& destino);
     void mostrarTodosLosRouters() const;
@@ -33,5 +30,6 @@ public:
     void mostrarTablaCompletaAleatoria();
 
 };
+
 
 #endif // REDENRUTADORES_H

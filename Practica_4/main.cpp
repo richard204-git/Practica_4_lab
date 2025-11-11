@@ -9,10 +9,10 @@ int main() {
 
     int opcion;
     do {
-        cout << "\n=== SIMULADOR DE RED DE ENRUTADORES ===\n";
-        cout << "1. Mostrar routers actuales\n";
-        cout << "2. Agregar router temporal\n";
-        cout << "3. Eliminar router temporal\n";
+        cout << "\n=== [ MENUN ] ===\n";
+        cout << "1. Mostrar routers\n";
+        cout << "2. Agregar router\n";
+        cout << "3. Eliminar router\n";
         cout << "4. Agregar enlace entre routers\n";
         cout << "5. Mostrar camino mas corto\n";
         cout << "6. Mostrar vecinos de un router\n";
@@ -69,13 +69,13 @@ int main() {
             red.mostrarTablaDeCostos(router);
         }
         else if (opcion == 8) {
-            // 💥 Aquí empieza el menú de red aleatoria
+            // Aquí empieza el menú de red aleatoria
             RedEnrutadores redAleatoria;
             redAleatoria.generarRedAleatoria();
 
             int subopcion;
             do {
-                cout << "\n===== MENÚ RED ALEATORIA =====\n";
+                cout << "\n===== [] MENU RED ALEATORIA ] =====\n";
                 cout << "1. Mostrar routers generados\n";
                 cout << "2. Mostrar vecinos de un router\n";
                 cout << "3. Mostrar tabla de costos de un router\n";
@@ -92,24 +92,29 @@ int main() {
                     string nombre;
                     cout << "Ingrese el nombre del router: ";
                     cin >> nombre;
+                    cout <<endl;
                     redAleatoria.mostrarVecinosRouter(nombre);
                 }
                 else if (subopcion == 3) {
                     string router;
                     cout << "Ingrese el router: ";
                     cin >> router;
+                    cout <<endl;
                     redAleatoria.mostrarTablaDeCostos(router);
                 }
                 else if (subopcion == 4) {
                     string origen, destino;
                     cout << "Ingrese router origen: ";
                     cin >> origen;
+                    cout <<endl;
                     cout << "Ingrese router destino: ";
                     cin >> destino;
+                    cout <<endl;
                     redAleatoria.mostrarCaminoMasCorto(origen, destino);
                 }
                 else if (subopcion == 5) {
                     redAleatoria.mostrarTablaCompletaAleatoria();
+                    cout <<endl;
                 }
 
             } while (subopcion != 0);
@@ -120,3 +125,4 @@ int main() {
     cout << "Saliendo del simulador...\n";
     return 0;
 }
+

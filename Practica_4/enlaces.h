@@ -1,7 +1,6 @@
 #ifndef ENLACES_H
 #define ENLACES_H
 
-
 #include <string>
 using namespace std;
 
@@ -16,5 +15,4 @@ public:
     int getCosto() const;
     void setCosto(int c);
 };
-
 #endif // ENLACES_H

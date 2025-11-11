@@ -9,10 +9,10 @@ using namespace std;
 
 class Enrutador {
 private:
-    string nombre;
-    map<string, int> tablaCostos;
-    map<string, string> tablaRutas;
-    vector<Enlace> vecinos;
+    string nombre;  //nombre del router.
+    map<string, int> tablaCostos; //Costo mínimo a cada destino.
+    map<string, string> tablaRutas; //Siguiente salto hacia cada destino.
+    vector<Enlace> vecinos; //lista conexión directa
 
 public:
     Enrutador(const string& n);
